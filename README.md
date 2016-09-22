@@ -56,19 +56,19 @@ You should see a success message that says "Greetings from srcclr!"
 
 Using the IDE of your choice, open up the build.gradle file in the project’s home directory.
 Add the following sections of code into the build.gradle file directly below the buildscript block.
-```java
+```gradle
 plugins {
     id "com.srcclr.gradle" version "2.0.2"
 }
 ```
 
 Next add the srcclr plugin to the end of the plugins list. Append the following line:
-```java 
+```gradle 
 apply plugin: 'srcclr'
 ```
 
 That portion of the build.gradle file should now look like this
-```java
+```gradle
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -76,3 +76,19 @@ apply plugin: 'spring-boot'
 apply plugin: 'srcclr'
 ```
 
+Finally, add the api token for this application to the bottom of the build.gradle file.
+```gradle
+srcclr{
+  apiToken = "<YOUR AUTH TOKEN HERE>"
+}
+```
+
+Save the gradle.build file and you are ready to try srcclr out.
+
+
+#Step 3) Run the project with srcclr and see the vulnerability report
+Now that we have our dependancy vulnerabality scanning tool hooked up into our application, lets use it to generate a report. 
+Make sure that you have saved the build.gradle file and run the following command
+```bash
+./gradlew clean build srcclr
+```
