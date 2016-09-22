@@ -92,3 +92,43 @@ Make sure that you have saved the build.gradle file and run the following comman
 ```bash
 ./gradlew clean build srcclr
 ```
+
+In the output of the build you will see a block of text with the srcclr results.
+It should look something like this:
+```bash
+Libraries:
+62 libraries, 38 lines of code
+3 direct and 59 transitive
+3 vulnerable libraries
+9 different licenses are used
+1 library is GPL-licensed
+
+Security Issues:
+0 high [H] risk vulnerabilities
+2 medium [M] risk vulnerabilities affecting 2 libraries
+1 low [L] risk vulnerability affecting 1 library
+
+- M SID-2375  SpEL Injection Attacks [Spring Boot AutoConfigure 1.2.7.RELEASE]
+- M SID-2403  Leakage of sensitive properties [Spring Boot Actuator 1.2.7.RELEASE]
+- L SID-1600  Information Disclosure of Previous Requests [Jetty :: Http Utility 9.2.13.v20150730]
+
+Report:
+https://app.sourceclear.com/teams/N22UNW/--a custom link for you. It wil look different for each person. 
+:srcclr
+```
+
+The version of Spring Boot has two medium vulnerabilities and the version of the Jetty Http Utility library has one low risk vulnerabilities.
+
+#Step 4) Fix the vulnerability 
+
+Now that we know where our problems are, we can fix them. We will do this by upgrading Spring Boot from 1.2.7 to 1.4.0 in our build.gradle file.
+Update the Spring Boot library by modifying this line of code:
+```gradle
+classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+```
+To:
+```gradle
+classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+```
+Save the build.gradle file.
+
