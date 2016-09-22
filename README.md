@@ -44,3 +44,12 @@ Start the app to make ensure that you can run it
 ./gradlew build && java -jar build/libs/insecure-web-app-0.1.0.jar
 ```
 
+A bunch (that’s the technical term) of text will scroll by as the webserver is started. When it stops, open a browser and go to http://localhost:8080/
+
+You should see a success message that says "Greetings from srcclr!"
+
+> Tip: Control-c will stop the webserver on a mac.
+
+**Congratulations! You have set up an insecure web application on your laptop! Now let’s find out how to track down the vulnerability in your application and fix it.**
+
+#Step 2) Setup the project to use srcclr
