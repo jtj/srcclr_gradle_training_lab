@@ -14,7 +14,7 @@ This 30 minute lab will teach you how to setup srcclr in a project to automatica
 5. Rerun srcclr to show the vulnerability has been fixed and the application works.
 
 ##Lab Requirements
-To use this lab you will need:
+#####To use this lab you will need
 1. Git and Gradle running on your laptop. 
 2. A srcclr account (signup on https://www.sourceclear.com)
 3. An Auth Token (NEED LINK TO INSTRUCTIONS HERE.)
