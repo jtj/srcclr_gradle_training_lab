@@ -32,3 +32,15 @@ Navigate into the newly created directory.
 cd srcclr_gradle_training_lab/
 ```
 
+Run a clean build to make sure that everything is OK
+```bash
+./gradlew clean build
+```
+
+You should get a "BUILD SUCCESFULL" message.
+
+Start the app to make ensure that you can run it
+```bash
+./gradlew build && java -jar build/libs/insecure-web-app-0.1.0.jar
+```
+
