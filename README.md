@@ -20,3 +20,15 @@ This 30 minute lab will teach you how to setup srcclr in a project to automatica
 3. An Auth Token (NEED LINK TO INSTRUCTIONS HERE.)
 
 
+#Step 1) Set up a web application that has a known vulnerability
+
+Make a new directory on your laptop for the lab and then navigate to it.
+Clone this labs git repo.
+```bash
+git clone https://github.com/jtj/srcclr_gradle_training_lab
+```
+Navigate into the newly created directory.
+```bash
+cd srcclr_gradle_training_lab/
+```
+
