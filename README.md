@@ -171,5 +171,6 @@ Run:
 When the application starts, open a browser and go to http://localhost:8080/
 You should see a success message that says "Greetings from srcclr!"
 
-Congratulations! You have learned how to setup srcclr to scan your application for dependency vulnerabilities.  
+**Congratulations! You have learned how to setup srcclr to scan your application for dependency vulnerabilities.**  
 
+> More information on how to use srcclr can be found here: https://srcclr.help/docs
