@@ -45,7 +45,6 @@ Start the app to make ensure that you can run it
 ```
 
 A bunch (that’s the technical term) of text will scroll by as the webserver is started. When it stops, open a browser and go to http://localhost:8080/
-
 You should see a success message that says "Greetings from srcclr!"
 
 > Tip: Control-c will stop the webserver on a mac.
@@ -131,4 +130,46 @@ To:
 classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
 ```
 Save the build.gradle file.
+
+#Step 5) Run srcclr again to see the results of updating the dependency
+Run:
+```bash
+./gradlew clean build srcclr
+```
+
+The report in the output should look like this:
+```bash
+
+Libraries:
+53 libraries, 38 lines of code
+3 direct and 50 transitive
+0 vulnerable libraries
+8 different licenses are used
+1 library is GPL-licensed
+
+Security Issues:
+0 high [H] risk vulnerabilities
+0 medium [M] risk vulnerabilities
+0 low [L] risk vulnerabilities
+
+
+Report:
+https://app.sourceclear.com/teams/N22UNW/--a custom link for you. It wil look different for each person.
+:srcclr
+
+```
+
+All the dependency vulnerabilities are gone, not just the Spring Boot ones!
+
+The Jetty Http Utility library was a dependency for Spring Boot 1.2.7, when you updated Spring Boot the Jetty lib was also updated. When hunting down dependency vulnerabilities, it’s recommended that replace re-run srcclr after updating each library.
+
+After updating the library we need to run the application to make sure that it still works.
+Run: 
+```bash
+./gradlew build && java -jar build/libs/insecure-web-app-0.1.0.jar
+```
+When the application starts, open a browser and go to http://localhost:8080/
+You should see a success message that says "Greetings from srcclr!"
+
+Congratulations! You have learned how to setup srcclr to scan your application for dependency vulnerabilities.  
 
