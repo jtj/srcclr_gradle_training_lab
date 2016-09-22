@@ -53,3 +53,26 @@ You should see a success message that says "Greetings from srcclr!"
 **Congratulations! You have set up an insecure web application on your laptop! Now let’s find out how to track down the vulnerability in your application and fix it.**
 
 #Step 2) Setup the project to use srcclr
+
+Using the IDE of your choice, open up the build.gradle file in the project’s home directory.
+Add the following sections of code into the build.gradle file directly below the buildscript block.
+```java
+plugins {
+    id "com.srcclr.gradle" version "2.0.2"
+}
+```
+
+Next add the srcclr plugin to the end of the plugins list. Append the following line:
+```java 
+apply plugin: 'srcclr'
+```
+
+That portion of the build.gradle file should now look like this
+```java
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'srcclr'
+```
+
