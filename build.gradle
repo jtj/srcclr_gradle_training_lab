@@ -3,14 +3,19 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
     }
+}
+
+plugins {
+    id "com.srcclr.gradle" version "2.0.2"
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'srcclr'
 
 jar {
     baseName = 'insecure-web-app'
@@ -21,9 +26,10 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
+ext['jetty.version'] = '9.2.17.v20160517'
 dependencies {
     // tag::jetty[]
     compile("org.springframework.boot:spring-boot-starter-web") {
@@ -37,3 +43,6 @@ dependencies {
     testCompile("junit:junit")
 }
 
+srcclr{
+  apiToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTYxNiwiZXhwIjoxNTA2NzM0MjUzLCJhdXRob3JpdGllcyI6IkFHRU5UIiwianRpIjoiNTQyYTkxZWEtYTJmOS00ZmI3LThmYTMtNjk1ZGUzYjI4MGU3IiwiY2xpZW50X2lkIjoiIiwic2NvcGUiOltdfQ.DvE_91v9fqHUgSxaQOd-2ZIYHLdEmVVuLIQfueg19yHbWRKVfJ5S4WL_xleak2_ijVkki-O1Dg-IYve9wK8TcmEZZ695UnvITZY_HkNknIR2CJL7xfpMiiZXs-HkyAxh33OmwWKUW7_J8vtlPM8rFPkjmjKcLLw3yiX87zEGNxE"
+}
