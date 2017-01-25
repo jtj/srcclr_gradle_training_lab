@@ -15,7 +15,7 @@ This 30 minute lab will teach you how to setup srcclr in a project to automatica
 
 ##Lab Requirements
 #####To use this lab you will need
-* 1. Git and Gradle running on your laptop. 
+* 1. Git, Gradle, and Java 1.8 running on your laptop. 
 * 2. A srcclr account (signup on https://www.sourceclear.com)
 * 3. An Auth Token
     * 3.1 ([Login](https://srcclr.com)) to SourceClear and select the team you want to setup the Gradle plugin in, and then select Agents > New Agent > Gradle (Under "Scan Automatically").
