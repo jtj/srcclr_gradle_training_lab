@@ -119,7 +119,7 @@ https://app.sourceclear.com/teams/N22UNW/--a custom link for you. It wil look di
 :srcclr
 ```
 
-The version of Spring Boot has two medium vulnerabilities and the version of the Jetty Http Utility library has one low risk vulnerabilities.
+The version of Spring Boot has two medium vulnerabilities and the version of the Jetty Http Utility library has one low risk vulnerabilities. (Note: The exact number of vulnerabilities listed may change if additional vulnerabilities are discovered.)
 
 #Step 4) Fix the vulnerability 
 
